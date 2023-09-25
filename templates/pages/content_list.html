@@ -10,12 +10,10 @@
             <!-- Favicon-->
             <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
             <!-- Core theme CSS (includes Bootstrap)-->
-            <link href="css/styles.css" rel="stylesheet" />
-            <link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
             <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
             <script>
                 $(document).ready(function() {
                     $(".intro-button").hover(function() {
@@ -94,23 +92,26 @@
             <div class="container px-4 px-lg-5">
                 <!-- Heading Row-->
                 <div class="row gx-4 gx-lg-5 align-items-center my-5">
-                    <div class="col-lg-7">
-                        <img id="company-image" class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'company2.jpg' %}" alt="..." />
+                    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'necklace.jpg' %}" alt="..." /></div>
+                    <div class="col-lg-5">
+                        <h1 class="font-weight-light">Necklace</p></h1>
+                        <p>목걸이</p>
+                        <a class="btn btn-primary" href="#!">목록</a>
+                    </div>
+
+                    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'earing.jpg' %}" alt="..." /></div>
+                    <div class="col-lg-5">
+                        <h1 class="font-weight-light">Earing</p></h1>
+                        <p>귀걸이</p>
+                        <a class="btn btn-primary" href="#!">목록</a>
+                    </div>
+                    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'bracelet.jpg' %}" alt="..." /></div>
+                    <div class="col-lg-5">
+                        <h1 class="font-weight-light">Bracelet & anklet</p></h1>
+                        <p>팔찌, 발찌</p>
+                        <a class="btn btn-primary" href="#!">목록</a>
                     </div>
                 </div>
-                <div id="daumRoughmapContainer1695631178942" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-
-                <script charset="UTF-8" >
-                    new daum.roughmap.Lander({
-            		    "timestamp" : "1695631178942",
-	                 	"key" : "2gb7j",
-	                	"mapWidth" : "500",
-            	    	"mapHeight" : "300"
-            	    }).render();
-                </script>
-                </div>
-
-                <!-- Content Row-->
 
             </div>
             <!-- Footer-->

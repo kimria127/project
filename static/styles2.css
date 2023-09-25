@@ -10,6 +10,14 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ #company-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    width: auto\9; /* IE8 이하 버전 지원 */
+
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Moirai+One&family=Noto+Sans+KR:wght@600&display=swap');
 :root {
   --bs-blue: #0d6efd;
@@ -9601,7 +9609,7 @@ textarea.form-control-lg {
     margin-bottom: 1.5rem !important;
   }
   .mb-lg-5 {
-    margin-bottom: 3rem !important;
+    margin-bottom: 10rem !important;
   }
   .mb-lg-auto {
     margin-bottom: auto !important;

@@ -11,11 +11,11 @@
             <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
             <!-- Core theme CSS (includes Bootstrap)-->
             <link href="css/styles.css" rel="stylesheet" />
-            <link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+
             <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
             <script>
                 $(document).ready(function() {
                     $(".intro-button").hover(function() {
@@ -94,24 +94,50 @@
             <div class="container px-4 px-lg-5">
                 <!-- Heading Row-->
                 <div class="row gx-4 gx-lg-5 align-items-center my-5">
-                    <div class="col-lg-7">
-                        <img id="company-image" class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'company2.jpg' %}" alt="..." />
+                    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'company.jpg' %}" alt="..." /></div>
+                    <div class="col-lg-5">
+                        <h1 class="font-weight-light">아름다움으로<p>다가갑니다</p></h1>
+                        <p>회사소개내용</p>
+                        <a class="btn btn-primary" href="{% url 'info' %}">회사 소개</a>
                     </div>
                 </div>
-                <div id="daumRoughmapContainer1695631178942" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-
-                <script charset="UTF-8" >
-                    new daum.roughmap.Lander({
-            		    "timestamp" : "1695631178942",
-	                 	"key" : "2gb7j",
-	                	"mapWidth" : "500",
-            	    	"mapHeight" : "300"
-            	    }).render();
-                </script>
+                <!-- Call to Action-->
+                <div class="card text-white bg-secondary my-5 py-4 text-center" >
+                    <div class="card-body" >
+                        <p class="text-white m-0" > <p>저희 RIA는 고객님의 만족을 위해 늘 최선을 다하겠습니다.</p>
+                    </div>
                 </div>
-
                 <!-- Content Row-->
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-4 mb-5">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h2 class="card-title">Necklace</h2>
+                            </div>
+                            <div class="neck-image"><img src="{% static 'necklace.jpg' %}" alt="상품 이미지1"></div>
+                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">자세히</a></div>
 
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h2 class="card-title">Earring</h2>
+                            </div>
+                            <div class="ear-image"><img src="{% static 'earing.jpg' %}" alt="상품 이미지1"></div>
+                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">자세히</a></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h2 class="card-title">bracelet & anklet</h2>
+                            </div>
+                            <div class="ba-image"><img src="{% static 'bracelet.jpg' %}" alt="상품 이미지1"></div>
+                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">자세히</a></div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- Footer-->
             <footer class="py-5 bg-dark">
