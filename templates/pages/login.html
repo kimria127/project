@@ -10,10 +10,10 @@
             <!-- Favicon-->
             <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
             <!-- Core theme CSS (includes Bootstrap)-->
-            <link href="css/styles.css" rel="stylesheet" />
 
             <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-            <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'style4.css' %}">
+
 
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script>
@@ -92,16 +92,18 @@
 
             <!-- Page Content-->
             <div class="login-wrapper">
-              <h2>Login</h2>
+              <h2 >Login</h2>
+                </p>
               <form method="post" action="서버의url" id="login-form">
-                  <input type="text" name="userName" placeholder="Email">
+                  <input type="text" name="userName" placeholder="ID">
                   <input type="password" name="userPassword" placeholder="Password">
                    <label for="remember-check">
-                      <input type="checkbox" id="remember-check">아이디 저장하기
+                      <input type="checkbox" id="remember-check">아이디 저장
                    </label>
-                  <input type="submit" value="Login">
+                <p><input type="submit" value="Login">
+                    <input type="submit" value="Join"></p>
               </form>
-         </div>
+             </div>
             <!-- Footer-->
             <footer class="py-5 bg-dark">
                 <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">© 2023. RIA Co. all rights reserved.</p></div>
