@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="container px-4 px-lg-5">
+    <br><p>
+    <h3>Necklace</h3>
+    <br><p>
+    <!-- 상품 목록 -->
+    <div class="row row-cols-1 row-cols-md-3">
+        {% for necklace in necklaces %}
+        <div class="col mb-4">
+            <div class="card">
+                <a href="{% url 'neckbuy' necklace.id %}" class="btn btn-primary">
+                    <img src="{{ necklace.image.url }}" class="card-img-top" alt="{{ necklace.name }} 이미지">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ necklace.name }}</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

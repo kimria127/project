@@ -26,6 +26,8 @@ SECRET_KEY = "django-insecure-=!0b2%%!jtrfq86)lo-%e5-7o(15)%o$ee#lma0wg3ujz%^&ii
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+
 ALLOWED_HOSTS = []
 
 
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "mysite",
     "pages",
+    "accounts.apps.AccountsConfig",
 ]
 
 MIDDLEWARE = [
@@ -126,3 +129,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL='/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

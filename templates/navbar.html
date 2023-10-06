@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+             <div class="container px-5">
+                 <a class="navbar-brand" href="{% url 'mysite' %}">Project RIA</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav ms-md-auto mb-2 mb-lg-0">
+
+                          <li class="nav-item">
+                            <a class="nav-link intro-button" >
+                                <span>Company</span>
+                            </a>
+                            <ul class="intro-dropdown" >
+                                <li><a class="nav-link text-black" href="{% url 'info' %}">Introduce</a></li>
+                            </ul>
+                          </li>
+
+                          <li class="nav-item">
+                            <a class="nav-link product-button" >
+                                <span>Product</span>
+
+                            </a>
+                            <ul class="pro-dropdown" >
+                                <li><a class="nav-link text-black" href="{% url 'index' %}" >Category</a></li>
+
+                              </ul>
+                          </li>
+                          {% if user.is_authenticated %}
+
+                          <li class="nav-item">
+                            <a class="nav-link login-button"">
+                                <span>{{ user.username }}</span>
+                            </a>
+                            <ul class="login-dropdown">
+                                <li><a class="nav-link text-black" href="{% url 'accounts:logout' %}">Logout</a></li>
+                            </ul>
+                          </li>
+                          {% else %}
+                          <li class="nav-item">
+                            <a class="nav-link login-button" >
+                                <span>Login</span>
+                            </a>
+                             <ul class="login-dropdown">
+                                <li><a class="nav-link text-black" href="{% url 'accounts:login' %}">Login</a></li>
+                              </ul>
+                          </li>
+                          {% endif %}
+
+
+                          <li class="nav-item">
+                            <a class="nav-link my-button" href="#!">
+                                <span>My</span>
+
+                            </a>
+                            <ul class="my-dropdown">
+                                <span >Mypage</span><br>
+                                <span>Order</span><br>
+                                <span>Cart</span>
+                            </ul>
+                          </li>
+
+                      </ul>
+                    </div>
+              </div>
+</nav>

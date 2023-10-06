@@ -1,95 +1,6 @@
-    <!DOCTYPE html>
-    {% load static %}
-    <html lang="ko">
-        <head>
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-            <meta name="description" content="" />
-            <meta name="author" content="" />
-            <title>Project Ria</title>
-            <!-- Favicon-->
-            <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-            <!-- Core theme CSS (includes Bootstrap)-->
-
-            <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-            <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script>
-                $(document).ready(function() {
-                    $(".intro-button").hover(function() {
-                        $(".intro-text").show();
-                    }, function() {
-                        $(".intro-text").hide();
-                    });
-                });
-                $(document).ready(function() {
-                    $(".product-button").hover(function() {
-                        $(".product-text").show();
-                    }, function() {
-                        $(".product-text").hide();
-                    });
-                });
-                $(document).ready(function() {
-                    $(".login-button").hover(function() {
-                        $(".login-text").show();
-                    }, function() {
-                        $(".login-text").hide();
-                    });
-                });
-                $(document).ready(function() {
-                    $(".my-button").hover(function() {
-                        $(".my-text").show();
-                    }, function() {
-                        $(".my-text").hide();
-                    });
-                });
-            </script>
-        </head>
-        <body>
-            <!-- Responsive navbar-->
-           <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-             <div class="container px-5">
-                 <a class="navbar-brand" href="{% url 'mysite' %}">Project RIA</a>
-                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul class="navbar-nav ms-md-auto mb-2 mb-lg-0">
-                          <li class="nav-item">
-                            <a class="nav-link intro-button" href="{% url 'info' %}">
-                                <span>Company</span>
-                                <span class="intro-text">Introduce</span>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link product-button" href="{% url 'index' %}">
-                                <span>Product</span>
-                                <span class="product-text">Necklace | </span>
-                                <span class="product-text">Earring | </span>
-                                <span class="product-text">bracelet & anklet</span>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link login-button" href="{% url 'login' %}">
-                                <span>Login</span>
-                                <span class="login-text">Login</span>
-                                <span class="login-text">Join</span>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link my-button" href="#!">
-                                <span>My</span>
-                                <span class="my-text">Mypage</span>
-                                <span class="my-text">Order</span>
-                                <span class="my-text">Cart</span>
-                            </a>
-                          </li>
-
-                      </ul>
-                    </div>
-              </div>
-            </nav>
-
-            <!-- Page Content-->
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
             <div class="container px-4 px-lg-5">
                 <!-- Heading Row-->
                 <div class="row gx-4 gx-lg-5 align-items-center my-5">
@@ -113,8 +24,8 @@
                             <div class="card-body">
                                 <h2 class="card-title">Necklace</h2>
                             </div>
-                            <div class="neck-image"><img src="{% static 'necklace.jpg' %}" alt="상품 이미지1"></div>
-                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">자세히</a></div>
+                            <div class="neck-image"><img src="{% static 'necklace.jpg' %}" alt="상품 이미지"></div>
+                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'contentN' %}">자세히</a></div>
 
                         </div>
                     </div>
@@ -123,8 +34,8 @@
                             <div class="card-body">
                                 <h2 class="card-title">Earring</h2>
                             </div>
-                            <div class="ear-image"><img src="{% static 'earing.jpg' %}" alt="상품 이미지1"></div>
-                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">자세히</a></div>
+                            <div class="ear-image"><img src="{% static 'earring.jpg' %}" alt="상품 이미지"></div>
+                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'contentE' %}">자세히</a></div>
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
@@ -132,15 +43,10 @@
                             <div class="card-body">
                                 <h2 class="card-title">bracelet & anklet</h2>
                             </div>
-                            <div class="ba-image"><img src="{% static 'bracelet.jpg' %}" alt="상품 이미지1"></div>
-                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">자세히</a></div>
+                            <div class="ba-image"><img src="{% static 'bracelet.jpg' %}" alt="상품 이미지"></div>
+                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'contentL' %}">자세히</a></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Footer-->
-            <footer class="py-5 bg-dark">
-                <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">© 2023. RIA Co. all rights reserved.</p></div>
-            </footer>
-        </body>
-    </html>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+            <div class="container px-4 px-lg-5">
+                <!-- Heading Row-->
+                <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'necklace.jpg' %}" alt="..." /></div>
+                    <div class="col-lg-5">
+                        <h1 class="font-weight-light">Necklace</p></h1>
+                        <p>목걸이</p>
+                        <a class="btn btn-primary" href="{% url 'contentN' %}">목록</a>
+                    </div>
+
+                    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'earring.jpg' %}" alt="..." /></div>
+                    <div class="col-lg-5">
+                        <h1 class="font-weight-light">Earring</p></h1>
+                        <p>귀걸이</p>
+                        <a class="btn btn-primary" href="{% url 'contentE' %}">목록</a>
+                    </div>
+                    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'bracelet.jpg' %}" alt="..." /></div>
+                    <div class="col-lg-5">
+                        <h1 class="font-weight-light">Bracelet & anklet</p></h1>
+                        <p>팔찌, 발찌</p>
+                        <a class="btn btn-primary" href="{% url 'contentL' %}">목록</a>
+                    </div>
+                </div>
+
+            </div>
+{% endblock %}

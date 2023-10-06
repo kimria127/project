@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<br>
+<p>
+<img src="{{ product.image.url }}" alt="{{ product.name }} 이미지">
+<br>
+<p>
+<h3>{{ product.name }}</h3>
+<p>{{ product.description }}</p>
+
+<form method="post" >
+    {% csrf_token %}
+    <br>
+    <label for="color">COLOR </label>
+    <select name="color" id="color">
+        <osption value="red">Silver</osption>
+        <option value="blue">Gold</option>
+        <option value="green">Rose Gold</option>
+    </select>
+
+</form>
+<br>
+    <button type="submit"> Cart </button>
+    <button type="submit"> Buy </button>
+
+{% endblock %}

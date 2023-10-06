@@ -4,37 +4,44 @@
 
 
 
-.intro-text {
-    opacity: 0 !important;
-}
-
-.intro-button:hover .intro-text {
-    opacity: 1;
-}
-.product-text {
+ul.intro-dropdown,
+ul.pro-dropdown,
+ul.cate-dropdown,
+ul.login-dropdown,
+ul.logout-dropdown,
+ul.my-dropdown {
     display: none;
 }
 
-.product-button:hover .product-text {
-    display: inline;
-}
-.login-text {
-    display: none;
+/* 상세 항목 스타일링 */
+ul.intro-dropdown,
+ul.pro-dropdown,
+ul.login-dropdown,
+ul.logout-dropdown,
+ul.my-dropdown {
+    position: absolute; /* 절대 위치 */
+    background-color: #fff; /* 배경색 */
+    padding: 5px !important; /* 내부 여백 조절 */
+    border: 1px solid #ccc; /* 테두리 스타일 지정 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    text-align:center;
+    font-size:12px;
+    top: calc(100% -10px;); /* MY 아래에 위치 (10px는 여백 조절에 따라 조절 가능) */
+    transform: center;
 }
 
-.login-button:hover .product-text {
-    display: inline;
+
+
+/* 상세 항목의 내부 텍스트 스타일링 */
+ul.intro-dropdown li,
+ul.pro-dropdown li,
+ul.login-dropdown li,
+ul.logout-dropdown,
+ul.my-dropdown li {
+    margin: 5px 0; /* 각 항목의 위아래 여백 */
+    color: #000 !important; /* 텍스트 색상 지정 */
+    display: block; /* 항목을 세로로 나열 */
 }
-.my-text {
-    display: none;
-}
-
-.my-button:hover .product-text {
-    display: inline;
-}
-
-
-
 
 :root {
   --bs-blue: #0d6efd;
@@ -4237,6 +4244,7 @@ textarea.form-control-lg {
   flex: 1 1 auto;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
   color: var(--bs-card-color);
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .card-title {
@@ -8164,7 +8172,7 @@ textarea.form-control-lg {
 
 .bg-secondary {
   --bs-bg-opacity: 1;
-  background-color: #FF5733 !important;
+  background-color: #D3D3D3 !important;
 }
 
 .bg-success {
