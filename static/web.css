@@ -4,6 +4,16 @@
 
 
 
+.category {
+    color: inherit; /* 링크의 색상을 부모 요소의 색상으로 설정합니다. */
+    text-decoration: none; /* 밑줄을 제거합니다. */
+}
+
+.my-page {
+    font-size : 24px;
+}
+
+
 ul.intro-dropdown,
 ul.pro-dropdown,
 ul.cate-dropdown,
@@ -631,7 +641,7 @@ progress {
 }
 
 .img-fluid {
-  max-width: 100%;
+  max-width: 100% !important;
   height: auto;
 }
 
@@ -4314,7 +4324,7 @@ textarea.form-control-lg {
 .card-img,
 .card-img-top,
 .card-img-bottom {
-  width: 100%;
+  width: auto;
 }
 
 .card-img,
@@ -6701,7 +6711,7 @@ textarea.form-control-lg {
 }
 
 .text-bg-secondary {
-  color: #fff !important;
+  color: #2b2d30 !important;
   background-color: RGBA(108, 117, 125, var(--bs-bg-opacity, 1)) !important;
 }
 
@@ -8172,7 +8182,7 @@ textarea.form-control-lg {
 
 .bg-secondary {
   --bs-bg-opacity: 1;
-  background-color: #D3D3D3 !important;
+  background-color: #2b2d30!important;
 }
 
 .bg-success {

@@ -5,25 +5,22 @@
                 <!-- Heading Row-->
                 <div class="row gx-4 gx-lg-5 align-items-center my-5">
                     <div class="col-lg-7">
-                        <img id="company-image" class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'company2.jpg' %}" alt="..." />
+                        <img  class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'company2.jpg' %}" alt="..." />
                     </div>
                 </div>
-                <div>
-                  <h3>오시는 길</h3>
-                 <div id="daumRoughmapContainer1695631178942" class="root_daum_roughmap root_daum_roughmap_landing">
-                 </div>
-
-                   <script charset="UTF-8">
-                       new daum.roughmap.Lander({
-            	    	    "timestamp" : "1695631178942",
-	                     	"key" : "2gb7j",
-	                	    "mapWidth" : "500",
-                	    	"mapHeight" : "300"
-            	        }).render();
-                    </script>
-                </div>
-                </p>
-
+                <h3>오시는 길</h3>
+                <div id="daumRoughmapContainer1697198766430" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+               <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+               <script charset="UTF-8">
+        	        new daum.roughmap.Lander({
+                   		"timestamp" : "1697198766430",
+	        	        "key" : "2ggzf",
+                 		"mapWidth" : "640",
+             	    	"mapHeight" : "360"
+              	}).render();
+               </script>
+                <br>
             </div>
+
 
 {% endblock %}

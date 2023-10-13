@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+
+<br>
 <br>
 <p>
 <img src="{{ product.image.url }}" alt="{{ product.name }} 이미지">
 <br>
 <p>
+
 <h3>{{ product.name }}</h3>
 <p>{{ product.description }}</p>
 
-<form method="post" >
+<form method="post" action="{% url 'add_to_cart' product.id %}">
     {% csrf_token %}
     <br>
     <label for="size">SIZE </label>
@@ -21,13 +24,47 @@
 
     <label for="color">COLOR </label>
     <select name="color" id="color">
-        <osption value="red">Silver</osption>
-        <option value="blue">Gold</option>
-        <option value="green">Rose Gold</option>
+        <option value="Silver">Silver</option>
+        <option value="Gold">Gold</option>
+        <option value="Rose Gold">Rose Gold</option>
     </select>
+    <br>
+    <button type="submit" class="btn btn-primary"> Cart </button>
+    <button type="submit" class="btn btn-primary"> Buy </button>
+    <a class="btn btn-primary" href="{% url 'contentN' %}">Back</a>
 </form>
-<br>
-    <button type="submit"> Cart </button>
-    <button type="submit"> Buy </button>
+
+<section class="mb-5">
+    <div class="card bg-light">
+        <div class="card-body">
+            <form method="post" action="{% url 'comment_create' product_id=product.id %}">
+                {% csrf_token %}
+               <label for="content">상품평 작성</label>
+                <textarea id="content" name="content" class="form-control" rows="3" required placeholder="내용을 입력해주세요."></textarea>
+               <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <div class="comment-list">
+                {% for comment in product.comment_set.all %}
+
+                   <div class="comment">
+                        <strong>{{ comment.author.username }}</strong>
+                        <br>
+                        <p>{{ comment.content }}</p>
+                        <small>{{ comment.create_date }}</small>
+                   </div>
+                {% if comment.create_date != comment.modify_date %}
+                - 수정일자: {{ comment.modify_date }}
+                {% endif %}
+                {% if request.user == comment.author %}
+                <a href="{% url 'comment_update' comment.id %}" class="btn btn-sm btn-outlinesecondary">수정</a>
+                <a href="{% url 'comment_delete' comment.id %}" class="btn btn-sm btn-outlinesecondary">삭제</a>
+                {% endif %}
+
+               {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
 
 {% endblock %}

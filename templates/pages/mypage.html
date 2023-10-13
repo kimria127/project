@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+            {% block content %}
+            <div >
+                <h2>MY PAGE</h2>
+
+                <table>
+                    <tr >ID : {{ user.username }}<br></tr>
+                     <tr>Password : ******** <br></tr>
+                     <tr>E-mail : {{ user.email }}<br></tr>
+                </table>
+                <br>
+                <a class="btn btn-primary" href="{% url 'cart' %}"> Cart</a>
+                <button type="submit" class="btn btn-primary" >Order</button>
+
+            </div>
+            {% endblock %}
+

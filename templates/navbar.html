@@ -47,14 +47,14 @@
 
 
                           <li class="nav-item">
-                            <a class="nav-link my-button" href="#!">
+                            <a class="nav-link my-button" >
                                 <span>My</span>
 
                             </a>
                             <ul class="my-dropdown">
-                                <span >Mypage</span><br>
+                                <li><a class="nav-link text-black" href="{% url 'mypage' %}">Mypage</a></li>
                                 <span>Order</span><br>
-                                <span>Cart</span>
+                                <li><a class="nav-link text-black" href="{% url 'cart' %}">Cart</a></li>
                             </ul>
                           </li>
 

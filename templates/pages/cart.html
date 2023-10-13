@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<br>
+    <h1>Cart</h1>
+    <br>
+    <ul>
+        {% for item in cart %}
+            <li>
+                {{ item.image.url }}
+                <h5>상품명: {{ item.name }}<br></h5>
+                옵션 : Size: {{ item.size }} | Color: {{ item.color }}<br>
+            </li>
+            <hr>
+        {% endfor %}
+    </ul>
+    <a class="btn btn-primary" href="{% url 'index' %}">계속 쇼핑하기</a>
+    <button class="btn btn-primary"> 주문 </button>
+    <br>
+
+{% endblock %}

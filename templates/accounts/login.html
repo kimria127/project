@@ -20,8 +20,8 @@
                     {% if form.errors %}
                    <p>등록되지 않은 회원이거나 아이디 혹은 비밀번호가 올바르지 않습니다.</p>
                     {% endif %}
-                    <input type="submit" value="Login">
-                    <a href="{% url 'accounts:join' %}">Join</a>
+                    <input type="submit" value="Login" class="btn btn-primary" >
+                    <a href="{% url 'accounts:join' %}"class="btn btn-primary" >Join</a>
                 </form>
             </div>
             {% endblock %}
