@@ -1,18 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
-            {% block content %}
-            <div >
-                <h2>MY PAGE</h2>
+{% block content %}
+<div class="mapage">
+        <h1 style="font-weight: bold !important;">MY PAGE</h1>
 
-                <table>
-                    <tr >ID : {{ user.username }}<br></tr>
-                     <tr>Password : ******** <br></tr>
-                     <tr>E-mail : {{ user.email }}<br></tr>
-                </table>
-                <br>
-                <a class="btn btn-primary" href="{% url 'cart' %}"> Cart</a>
-                <button type="submit" class="btn btn-primary" >Order</button>
-
-            </div>
-            {% endblock %}
+        <table class="idpaw">
+            <tr>
+                <td>ID :   </td>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <td>Password :  </td>
+                <td> ********** </td>
+            </tr>
+            <tr>
+                <td>E-mail :  </td>
+                <td>{{ user.email }}</td>
+            </tr>
+        </table>
+        <br>
+            <div class="btn-container">
+            <a class="btn btn-primary" href="{% url 'cart' %}">Cart</a>
+            <button type="submit" class="btn btn-primary">Order</button>
+        </div>
+</div>
+{% endblock %}
 

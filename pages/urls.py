@@ -14,6 +14,7 @@ urlpatterns = [
     path('mypage/', views.mypage, name='mypage'),
 
     path('cart/', views.cart, name='cart'),
+    path('cart/remove/', views.remove_selected_from_cart, name='remove_selected_from_cart'),
     path('content-neck/neckbuy/<int:product_id>/add_to_cart/', views.add_to_cart, name='add_to_cart'),
     path('content-ear/earbuy/<int:product_id>/add_to_cart/', views.add_to_cart, name='add_to_cart'),
     path('content-let/letbuy/<int:product_id>/add_to_cart/', views.add_to_cart, name='add_to_cart'),

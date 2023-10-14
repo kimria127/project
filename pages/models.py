@@ -7,7 +7,8 @@ class MainContent(models.Model):
     title=models.CharField(max_length=200)
     content=models.TextField()
     pub_date=models.DateTimeField('date published')
-
+    def __str__(self):
+        return self.title
 class Necklace(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='necklaces/', blank=True)
@@ -30,8 +31,7 @@ class Comment(models.Model):
     def __str__(self):
         return self.author.username
 
-    def __str__(self):
-        return self.title
+
 
 class Comment2(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)

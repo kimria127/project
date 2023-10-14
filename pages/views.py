@@ -174,18 +174,25 @@ def comment3_delete(request, comment_id):
 
 def add_to_cart(request, product_id):
 
-    # 선택한 상품 ID와 옵션(사이즈 및 색상) 가져오기
+
     size = request.POST.get('size')
     color = request.POST.get('color')
 
-    cart = request.session.get('cart', [])  # 세션에 저장된 장바구니 정보 또는 빈 리스트 가져오기
+    cart = request.session.get('cart', [])
     cart.append({'product_id': product_id, 'size': size, 'color': color})
     request.session['cart'] = cart  # 세션에 장바구니 정보 저장
-
-    # 장바구니 페이지로 이동
     return redirect('cart')
 
+def remove_selected_from_cart(request):
+    if request.method == 'POST':
+        selected_products = request.POST.getlist('selected_products')
+        cart = request.session.get('cart', [])
 
+        cart = [item for item in cart if item['product_id'] not in selected_products]
+
+        request.session['cart'] = cart
+
+    return redirect('cart')
 def cart(request):
     # 장바구니 정보 가져오기
     cart = request.session.get('cart', [])

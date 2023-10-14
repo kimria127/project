@@ -2,7 +2,38 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Moirai+One&family=Noto+Sans+KR:wght@600&display=swap');
 
+.mapage{
+     text-align: center; /* 텍스트를 가운데 정렬 */
+     margin: 20px;
+     margin-top : 40px!important;
+     /* 페이지 주변에 여백 추가 */
+}
+.btn-container a{
+     margin-right: 40px;
+}
 
+.delete {
+    margin-right: 40px!important; /* 원하는 만큼 왼쪽으로 이동 */
+}
+.cartc{
+       font-weight: bold;
+       margin-top: 40px!important;
+       margin: 0 auto; /* 테이블을 가운데로 정렬 */
+       border-collapse: collapse;
+       margin-bottom: 50px;
+}
+.idpaw{
+       font-weight: bold;
+       margin-top: 80px!important;
+       margin: 0 auto; /* 테이블을 가운데로 정렬 */
+       border-collapse: collapse;
+       margin-bottom: 50px;
+}
+
+.idpaw td{
+    padding: 20px 30px; /* 각 셀 주변에 여백 추가 */
+    border: 3px solid #ccc; /
+}
 
 .category {
     color: inherit; /* 링크의 색상을 부모 요소의 색상으로 설정합니다. */

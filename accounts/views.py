@@ -17,10 +17,3 @@ def join(request):
         form = SignupForm()
     return render(request, 'accounts/join.html', {'form': form, 'errors': errors})
 
-def mypage(request):
-    if request.user.is_authenticated:
-        user_profile = UserProfile.objects.get(user=request.user)
-        # 닉네임 대신 아이디(Username)를 표시
-        return render(request, 'accounts/mypage.html', {'username': request.user.username})
-    else:
-        return redirect('login')
