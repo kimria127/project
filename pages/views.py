@@ -8,9 +8,10 @@ from django.contrib.auth.decorators import login_required
 
 def info(request):
     return render(request, "pages/company_info.html")
-
+@login_required
 def mypage(request):
     return render(request, "pages/mypage.html")
+
 
 def index(request):
     content_list = MainContent.objects.order_by('-pub_date')
@@ -173,12 +174,10 @@ def comment3_delete(request, comment_id):
 
 
 def add_to_cart(request, product_id):
-
-
+    cart = request.session.get('cart', [])
     size = request.POST.get('size')
     color = request.POST.get('color')
 
-    cart = request.session.get('cart', [])
     cart.append({'product_id': product_id, 'size': size, 'color': color})
     request.session['cart'] = cart  # 세션에 장바구니 정보 저장
     return redirect('cart')
@@ -188,7 +187,7 @@ def remove_selected_from_cart(request):
         selected_products = request.POST.getlist('selected_products')
         cart = request.session.get('cart', [])
 
-        cart = [item for item in cart if item['product_id'] not in selected_products]
+        cart = [product for product in cart if ['product_id'] not in selected_products]
 
         request.session['cart'] = cart
 

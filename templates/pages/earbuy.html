@@ -1,30 +1,46 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<br>
-<p>
-<img src="{{ product.image.url }}" alt="{{ product.name }} 이미지">
-<br>
-<p>
-<h3>{{ product.name }}</h3>
-<p>{{ product.description }}</p>
+<div style="margin-top:30px; margin-left : 120px;">
+<h2 ><a href="{% url 'contentE' %}" class="category">< List</a> </h2>
+</div>
+<div class="product-details">
 
-<form method="post" action="{% url 'add_to_cart' product.id %}">
-    {% csrf_token %}
-    <br>
+    <div class="product-image">
+        <img class="proimg" src="{{ product.image.url }}" alt="{{ product.name }} 이미지">
+    </div>
+    <div class="product-info">
+        <h3>{{ product.name }}</h3>
+        <br>
+        <p>{{ product.description }}</p>
 
-    <label for="color">COLOR </label>
-    <select name="color" id="color">
-        <option value="Silver">Silver</option>
-        <option value="Gold">Gold</option>
-        <option value="Rose Gold">Rose Gold</option>
-    </select>
-    <br>
-    <button type="submit" class="btn btn-primary"> Cart </button>
-    <button type="submit" class="btn btn-primary"> Buy </button>
-    <a class="btn btn-primary" href="{% url 'contentE' %}">Back</a>
-</form>
+        <form method="post" action="{% url 'add_to_cart' product.id %}">
+            {% csrf_token %}
+            <div>
+                <label for="size">SIZE</label>
+                <select name="size" id="size">
+                   <option value="None">None</option>
+                 </select>
 
+            </div>
+            <div>
+                <label for="color">COLOR</label>
+                <select name="color" id="color">
+                  <option value="Silver">Silver</option>
+                 <option value="Gold">Gold</option>
+                 <option value="Rose Gold">Rose Gold</option>
+                </select>
+            </div>
+
+            <div class="buyb">
+                 <button type="submit" class="btn btn-primary">Cart</button>
+                 <button type="submit" class="btn btn-primary">Buy</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+<div class="commentss">
 <section class="mb-5">
     <div class="card bg-light">
         <div class="card-body">
@@ -32,27 +48,29 @@
                 {% csrf_token %}
                <label for="content">상품평 작성</label>
                 <textarea id="content" name="content" class="form-control" rows="3" required placeholder="내용을 입력해주세요."></textarea>
-               <button type="submit" class="btn btn-primary">Submit</button>
+               <button type="submit" class="btn btn-primary" style="margin-top:10px;">Submit</button>
             </form>
-            <div class="comment-list">
+            <div class="comment-list" style="margin-top:30px; margin-left:10px; >
                 {% for comment in product.comment2_set.all %}
-                   <div class="comment">
-                        <strong>{{ comment.author.username }}</strong>
-                        <br>
-                        <p>{{ comment.content }}</p>
-                        <small>{{ comment.create_date }}</small>
+
+                   <div class="comment" style="margin-top:20px;">
+                        <strong style=" font-weight: bold;font-size:18px;">[{{ comment.author.username }}]</strong>
+                        <p style="margin-top:10px; ">{{ comment.content }}</p>
+                        <small style="font-size:12px;">{{ comment.create_date }}</small>
                    </div>
                 {% if comment.create_date != comment.modify_date %}
-                - 수정일자: {{ comment.modify_date }}
+                <p style="font-size:12px;">- 수정일자: {{ comment.modify_date }}</p>
                 {% endif %}
                 {% if request.user == comment.author %}
                 <a href="{% url 'comment2_update' comment.id %}" class="btn btn-sm btn-outlinesecondary">수정</a>
                 <a href="{% url 'comment2_delete' comment.id %}" class="btn btn-sm btn-outlinesecondary">삭제</a>
                 {% endif %}
+
                {% endfor %}
             </div>
         </div>
     </div>
 </section>
+</div>
 
 {% endblock %}
